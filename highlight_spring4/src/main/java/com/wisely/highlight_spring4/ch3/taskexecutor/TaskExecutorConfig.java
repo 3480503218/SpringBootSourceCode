@@ -10,15 +10,15 @@ import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 @Configuration
 @ComponentScan("com.wisely.highlight_spring4.ch3.taskexecutor")
-@EnableAsync //1 
+@EnableAsync //1 开启对异步任务的支持
 public class TaskExecutorConfig implements AsyncConfigurer{//2
 
 	@Override
 	public Executor getAsyncExecutor() {//2
 		 ThreadPoolTaskExecutor taskExecutor = new ThreadPoolTaskExecutor();
-	        taskExecutor.setCorePoolSize(5);
-	        taskExecutor.setMaxPoolSize(10);
-	        taskExecutor.setQueueCapacity(25);
+	        taskExecutor.setCorePoolSize(5);//活跃线程数
+	        taskExecutor.setMaxPoolSize(10);//最大线程数
+	        taskExecutor.setQueueCapacity(25);//队列大小
 	        taskExecutor.initialize();
 	        return taskExecutor;
 	}
