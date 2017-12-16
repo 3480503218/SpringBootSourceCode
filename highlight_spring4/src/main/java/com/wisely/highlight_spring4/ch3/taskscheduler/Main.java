@@ -7,6 +7,7 @@ public class Main {
 		 AnnotationConfigApplicationContext context =
 	                new AnnotationConfigApplicationContext(TaskSchedulerConfig.class);
 		 
+		 context.close();
 	}
 
 }
