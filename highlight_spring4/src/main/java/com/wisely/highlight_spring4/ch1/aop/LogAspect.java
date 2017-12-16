@@ -30,8 +30,7 @@ public class LogAspect {
 	    public void before(JoinPoint joinPoint){
 	        MethodSignature signature = (MethodSignature) joinPoint.getSignature();
 	        Method method = signature.getMethod();
-	        System.out.println("	,"+method.getName());
-
+	        System.out.println("·½·¨Ê½À¹½Ø,"+method.getName());
 	    }
 	   
 	  
