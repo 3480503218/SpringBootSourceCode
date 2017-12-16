@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="ch8_6_2"/>
+<aop-project name="ch6_4"/>
+<aop-project name="ch7_7"/>
+<aop-project name="ch8_2"/>
+<aop-project name="ch11_1"/>
+<aop-project name="ch9_1"/>
+<aop-project name="config"/>
+<aop-project name="ch6_2_3"/>
+<aop-project name="ch5_2_2"/>
+<aop-project name="some"/>
+<aop-project name="ui">
+<aspect-definition advice-class-name="com.netflix.hystrix.contrib.javanica.aop.aspectj.HystrixCommandAspect" advice-method-name="methodsAnnotatedWithHystrixCommand(org.aspectj.lang.ProceedingJoinPoint)" advice-type="AROUND" aspect-end-line-number="-1" aspect-name="hystrixCommandAspect" aspect-start-line-number="-1" factory-id="org.springframework.ide.eclipse.aop.core.annotationAspectDefinitionElementFactory" file="/ui/src/main/java/com/wisely/ui/UiApplication.java" pointcut-expression="hystrixCommandAnnotationPointcut() || hystrixCollapserAnnotationPointcut()" proxy-target-class="false">
+<aop-reference advice-type="AROUND" bean="1:BeansModel|2:ui|3:java:com.wisely.ui.UiApplication|8:personHystrixService:12" bean-file="/ui/src/main/java/com/wisely/ui/service/PersonHystrixService.java" bean-start-line="12" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/ui/src/main/java/com/wisely/ui/UiApplication.java" source="=ui/D:\/common\/configuration\/repository\/com\/netflix\/hystrix\/hystrix-javanica\/1.4.10\/hystrix-javanica-1.4.10.jar&lt;com.netflix.hystrix.contrib.javanica.aop.aspectj(HystrixCommandAspect.class[HystrixCommandAspect~methodsAnnotatedWithHystrixCommand~Lorg.aspectj.lang.ProceedingJoinPoint;" source-start-line="-1" target="=ui/src\/main\/java&lt;com.wisely.ui.service{PersonHystrixService.java[PersonHystrixService~save~QString;" target-start-line="18"/>
+<aop-reference advice-type="AROUND" bean="1:BeansModel|2:ui|3:java:com.wisely.ui.UiApplication|8:someHystrixService:10" bean-file="/ui/src/main/java/com/wisely/ui/service/SomeHystrixService.java" bean-start-line="10" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/ui/src/main/java/com/wisely/ui/UiApplication.java" source="=ui/D:\/common\/configuration\/repository\/com\/netflix\/hystrix\/hystrix-javanica\/1.4.10\/hystrix-javanica-1.4.10.jar&lt;com.netflix.hystrix.contrib.javanica.aop.aspectj(HystrixCommandAspect.class[HystrixCommandAspect~methodsAnnotatedWithHystrixCommand~Lorg.aspectj.lang.ProceedingJoinPoint;" source-start-line="-1" target="=ui/src\/main\/java&lt;com.wisely.ui.service{SomeHystrixService.java[SomeHystrixService~getSome" target-start-line="16"/>
+</aspect-definition>
+</aop-project>
+<aop-project name="ch7_2"/>
+<aop-project name="ch8_5"/>
+<aop-project name="ch7_6"/>
+<aop-project name="ch9_4"/>
+<aop-project name="person"/>
+<aop-project name="ch10war"/>
+<aop-project name="ch8_4"/>
+<aop-project name="ch9_3_4"/>
+<aop-project name="ch10_4"/>
+<aop-project name="ch11_3"/>
+<aop-project name="ch10docker"/>
+<aop-project name="ch8_6_1"/>
+<aop-project name="highlight_springmvc4"/>
+<aop-project name="ch6_5"/>
+<aop-project name="ch7_4"/>
+<aop-project name="ch8_3"/>
+<aop-project name="ch9_3_5"/>
+<aop-project name="ch9_2"/>
+<aop-project name="ch10"/>
+<aop-project name="discovery"/>
+<aop-project name="highlight_spring4"/>
+<aop-project name="monitor"/>
+<aop-project name="ch5_2_3"/>
+</aop-reference-model>

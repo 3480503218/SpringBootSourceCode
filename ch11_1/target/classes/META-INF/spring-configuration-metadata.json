@@ -1,0 +1,25 @@
+{
+  "groups": [{
+    "name": "endpoints.status",
+    "type": "com.wisely.ch11_1.StatusEndPoint",
+    "sourceType": "com.wisely.ch11_1.StatusEndPoint"
+  }],
+  "properties": [
+    {
+      "name": "endpoints.status.enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.wisely.ch11_1.StatusEndPoint"
+    },
+    {
+      "name": "endpoints.status.id",
+      "type": "java.lang.String",
+      "sourceType": "com.wisely.ch11_1.StatusEndPoint"
+    },
+    {
+      "name": "endpoints.status.sensitive",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.wisely.ch11_1.StatusEndPoint"
+    }
+  ],
+  "hints": []
+}
