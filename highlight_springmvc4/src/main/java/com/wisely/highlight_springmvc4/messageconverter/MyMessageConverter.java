@@ -13,10 +13,10 @@ import org.springframework.util.StreamUtils;
 
 import com.wisely.highlight_springmvc4.domain.DemoObj;
 
-public class MyMessageConverter extends AbstractHttpMessageConverter<DemoObj> {//1
+public class MyMessageConverter extends AbstractHttpMessageConverter<DemoObj> {//1继承AbstractHttpMessageConverter实现自己的HttpMessageConverter
 
 	public MyMessageConverter() {
-		super(new MediaType("application", "x-wisely",Charset.forName("UTF-8")));//2
+		super(new MediaType("application", "x-wisely",Charset.forName("UTF-8")));//2自定义媒体类型
 	}
 	
 	/**
@@ -35,7 +35,7 @@ public class MyMessageConverter extends AbstractHttpMessageConverter<DemoObj> {/
 	}
 	
 	/**
-	 * 4
+	 * 4只处理DemoObj类
 	 */
 	@Override
 	protected boolean supports(Class<?> clazz) {
@@ -43,7 +43,7 @@ public class MyMessageConverter extends AbstractHttpMessageConverter<DemoObj> {/
 	}
 	
 	/**
-	 * 5
+	 * 5如何输出数据到response对象中
 	 */
 	@Override
 	protected void writeInternal(DemoObj obj, HttpOutputMessage outputMessage)
