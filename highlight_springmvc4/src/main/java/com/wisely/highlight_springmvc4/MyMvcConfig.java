@@ -22,7 +22,7 @@ import com.wisely.highlight_springmvc4.interceptor.DemoInterceptor;
 import com.wisely.highlight_springmvc4.messageconverter.MyMessageConverter;
 
 @Configuration
-@EnableWebMvc// 1
+@EnableWebMvc// 1开启对spring mvc的支持，不配置此项，继承WebMvcConfigureAdapter将无效
 @EnableScheduling
 @ComponentScan("com.wisely.highlight_springmvc4")
 public class MyMvcConfig extends WebMvcConfigurerAdapter {// 2
@@ -39,9 +39,8 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {// 2
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 
-		registry.addResourceHandler("/assets/**").addResourceLocations(
-				"classpath:/assets/");// 3
-
+		registry.addResourceHandler("/assets/**").//对外暴露的路径
+		addResourceLocations("classpath:/assets/");// 3 文件放置的目录
 	}
 
 	@Bean
