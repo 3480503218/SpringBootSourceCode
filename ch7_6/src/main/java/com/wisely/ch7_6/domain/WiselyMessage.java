@@ -6,4 +6,8 @@ public class WiselyMessage {
     public String getName(){
         return name;
     }
+
+    public WiselyMessage(String name) {
+        this.name = name;
+    }
 }
