@@ -22,11 +22,11 @@ public class WsController {
 	}
 
 	@Autowired
-	private SimpMessagingTemplate messagingTemplate;//1
+	private SimpMessagingTemplate messagingTemplate;//1 通过SimpMessagingTemplate向浏览器发送消息
 
 	@MessageMapping("/chat")
-	public void handleChat(Principal principal, String msg) { //2
-		if (principal.getName().equals("wyf")) {//3
+	public void handleChat(Principal principal, String msg) { //2 在spring MVC中，可以直接在参数中获取principal，并从其中获取用户信息
+		if (principal.getName().equals("wyf")) {//3 第一个参数：接收消息的用户 第二个参数：浏览器订阅的地址 第三个参数：消息本身
 			messagingTemplate.convertAndSendToUser("wisely",
 					"/queue/notifications", principal.getName() + "-send:"
 							+ msg);
