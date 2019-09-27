@@ -1,5 +1,6 @@
 package com.wisely.ch7_6;
 
+import com.wisely.ch7_6.domain.MyPasswordEncoder;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -29,11 +30,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
     //4认证授权
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-    		auth
-                .inMemoryAuthentication()//内存中的用户
-                .withUser("wyf").password("wyf").roles("USER")
-                .and()
-                .withUser("wisely").password("wisely").roles("USER");
+
+        //可以设置内存指定的登录的账号密码,指定角色
+        //不加.passwordEncoder(new MyPasswordEncoder())
+        //就不是以明文的方式进行匹配，会报错
+        //auth.inMemoryAuthentication().withUser("wyf").password("wyf").roles("USER");
+        //.passwordEncoder(new MyPasswordEncoder())。
+        //这样，页面提交时候，密码以明文的方式进行匹配。
+        auth.inMemoryAuthentication().passwordEncoder(new MyPasswordEncoder()).withUser("wisely").password("wisely").roles("USER");
+        auth.inMemoryAuthentication().passwordEncoder(new MyPasswordEncoder()).withUser("wyf").password("wyf").roles("USER");
     }
     //5忽略静态资源的拦截
     @Override
